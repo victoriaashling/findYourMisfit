@@ -1,3 +1,8 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+.survey {
+  text-align: center;
+  color: #777777
+}
