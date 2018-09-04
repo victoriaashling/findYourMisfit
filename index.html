@@ -38,7 +38,7 @@
 
         <br />
         <div class="line"></div>
-
+  
         <p class="description">
           <!-- A simple library to take care of complex&nbsp;CSS&nbsp;animations. -->
           Have a conversation with someone new and different!
@@ -46,25 +46,148 @@
       </div>
       <div class="scroll-overlay"></div>
     </div>
-
+  
     <div class="links">
       <div class="quickstart">
         <!-- $ npm install --save choreographer-js -->
-        (you"ll start by answering a few questions)
+        (You'll start by answering a few questions)
       </div>
       <!-- <a href="https://github.com/christinecha/choreographer-js"> -->
-        <a href="file:///Users/janiecedickens/workspace/misfit_project/project2/public/html/index.html">
+      <!-- <a href="http://www.google.com"> -->
+  
+        <div class="modal fade" id="survey-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><i><b>Code of Conduct</i></b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="conduct-body"><br>
+                <div class="modal-quotes">"One of the most sincere forms of respect is actually listening
+                  <p>
+                    to what another has to say"</p> – Bryant H. McGill
+                </div>
+    
+                <hr width="50%">
+                <p>Welcome to <b>Find Your (Mis)fit</b>, a chat platform created specifically to match you with someone you wouldn't
+                  normally speak with.</p>
+    
+                <p>Before you proceed to the survey that will help us choose your match, you must agree to the Code of Conduct
+                  featured below:<br></p>
+    
+                <hr width="10%">
+    
+                <h6><i>Code of Conduct</i></h6>
+    
+                <h5>
+                  <p>- I am aware that I will be matched with someone who has different opinions from me.</p>
+    
+                  <p>- I will treat all users with respect and will conduct myself in a respectful manner.</p>
+    
+                  <p> - I understand that <b>Find Your (Mis)fit</b> will not accept or tolerate any discriminatory comments/actions
+                    against anyone because of race, religion, sexuality, or any other means.</p>
+                </h5>
+    
+                <!-- makeshift submit button for code of conduct -->
+    
+                <script>checkForm(form)
+                  {
+                    if (!form.terms.checked) {
+                      alert("Please agree to the Code of Conduct.");
+                      form.terms.focus();
+                      return false;
+                    }
+                    return true;
+                  }
+    
+                </script>
+    
+                <form onsubmit="return checkForm(this);">
+                  <p><input onchange="this.setCustomValidity(validity.valueMissing ? 'Please accept the Code of Conduct to proceed to the survey.' : '');"
+                      id="field_terms" type="checkbox" required name="terms"> I accept the <u>Code of Conduct</u></p>
+                  <p><input type="submit"></p>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Proceed To Survey</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  
+        <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title">Instructions</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <h1>TESTING</h1>
+                          
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+    
         <!-- <button class="reference">documentation</button> -->
-        <button class="reference">Enter Here</button>
-      </a>
-    </div>
-
-    <div class="scroll-down">
-      <p>scroll down</p>
-      <div class="down-arrow"></div>
-    </div>
-
+    
+    
+    
+        <!-- Button trigger modal -->
+  
+        <button type="button" class="btn btn-primary signupbtn" data-toggle="modal" data-target="#sign-up-modal">
+          Sign-up / Login
+        </button>
+  
+        <button type="button" class="btn btn-primary surveybtn" data-toggle="modal" data-target="#survey-modal">
+          Start Survey
+        </button>
+    
+  
+        <div class="scroll-down">
+          <p>scroll down</p>
+          <div class="down-arrow"></div>
+        </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
     <script src="./dist/choreographer.min.js"></script>
     <script src="./index.js"></script>
   </body>
-</html>
+  
+  </html>
