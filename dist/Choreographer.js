@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Animation = require('./Animation');
-var defaultAnimations = require('./defaultAnimations');
+var Animation = require("./Animation");
+var defaultAnimations = require("./defaultAnimations");
 
 // Store a no-op
 var noop = function noop() {};
@@ -16,26 +16,25 @@ var noop = function noop() {};
       {Array} animations       | An array of Animation class config objects.
  **/
 
-var Choreographer = function () {
+var Choreographer = function() {
   function Choreographer(config) {
     var _this = this;
 
     _classCallCheck(this, Choreographer);
 
     this.customFunctions = config.customFunctions || {};
-    this.animations = config.animations.map(function (anim) {
+    this.animations = config.animations.map(function(anim) {
       anim.fn = _this.getAnimationFn(anim.type);
       return new Animation(anim);
     });
   }
 
   /** Helper to grab a function by its type. First try the defaults, then custom, then no-op.
-    * @param {String} type | the name (or key value) of the animation function.
+   * @param {String} type | the name (or key value) of the animation function.
    **/
 
-
   _createClass(Choreographer, [{
-    key: 'getAnimationFn',
+    key: "getAnimationFn",
     value: function getAnimationFn(type) {
       return defaultAnimations[type] || this.customFunctions[type] || noop;
     }
@@ -45,11 +44,11 @@ var Choreographer = function () {
      **/
 
   }, {
-    key: 'updateAnimations',
+    key: "updateAnimations",
     value: function updateAnimations(animations) {
       var _this2 = this;
 
-      // Wipe out the old animations and replace 'em.
+      // Wipe out the old animations and replace "em.
       this.animations = animations.map(function (anim) {
         anim.fn = _this2.getAnimationFn(anim.type);
         return new Animation(anim);
@@ -61,13 +60,13 @@ var Choreographer = function () {
      **/
 
   }, {
-    key: 'runAnimationsAt',
+    key: "runAnimationsAt",
     value: function runAnimationsAt(position) {
 
-      // Clear all the nodes' 'animated' attribute.
+      // Clear all the nodes" "animated" attribute.
       this.animations.forEach(function (anim) {
         anim.nodes.forEach(function (node) {
-          return node.setAttribute('animated', '');
+          return node.setAttribute("animated", "");
         });
       });
 

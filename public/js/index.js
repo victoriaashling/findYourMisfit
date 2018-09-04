@@ -4,7 +4,7 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
-// The API object contains methods for each kind of request we'll make
+// The API object contains methods for each kind of request we"ll make
 var API = {
   saveExample: function(example) {
     return $.ajax({
@@ -82,7 +82,7 @@ var handleFormSubmit = function(event) {
   $exampleDescription.val("");
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
+// handleDeleteBtnClick is called when an example"s delete button is clicked
 // Remove the example from the db and refresh the list
 var handleDeleteBtnClick = function() {
   var idToDelete = $(this)
