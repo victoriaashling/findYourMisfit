@@ -120,7 +120,8 @@ a { text-decoration: none; }
 }
 
 .links button:hover {
-  background-color: #95cc21;
+  /* background-color: #95cc21; */
+  background-color: #ff7474;
 }
 
 .scroll-down {

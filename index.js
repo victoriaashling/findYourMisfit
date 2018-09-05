@@ -52,7 +52,7 @@ function calculateAnimations() {
     { range: [fin * 0.4, fin], selectors: [".p", ".dash"], type: "change", style: "color", to: "#ff537c" },
 
     /* animate line */
-    { range: [-1, fin], selector: ".line", type: "scale", style: "width", from: 0.01, to: 50, unit: "%" },
+    { range: [-1, fin], selector: ".line", type: "scale", style: "width", from: 0.01, to: 100, unit: "%" },
     { range: [-1, fin], selector: ".line", type: "scale", style: "opacity", from: 0, to: 1 },
 
     /* animate arrow */
