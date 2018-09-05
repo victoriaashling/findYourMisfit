@@ -5,9 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway|Rubik" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-  <link rel="stylesheet" href="./index.css">
+      <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway|Rubik" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="animate.min.css">
+      <link rel="stylesheet" href="./index.css">
 
   <title>Find Your (mis)Fit</title>
 
@@ -50,119 +52,183 @@
   </div>
 
   <div class="links">
-    <!-- <div class="quickstart"> -->
-      (you"ll start by answering a few questions)
-    <!-- </div> -->
-      <!-- <button class="reference">documentation</button> -->
-      <!-- <button class="reference">Enter Here</button> -->
-  </div>
+    <div class="quickstart"></div>
 
-  <div class="modal fade" id="survey-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"><i><b>Code of Conduct</i></b></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="conduct-body"><br>
-          <div class="modal-quotes">"One of the most sincere forms of respect is actually listening
-            <p>
-              to what another has to say"</p> – Bryant H. McGill
+    <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-  
-          <hr width="50%">
-          <p>Welcome to <b>Find Your (Mis)fit</b>, a chat platform created specifically to match you with someone you wouldn't
-            normally speak with.</p>
-  
-          <p>Before you proceed to the survey that will help us choose your match, you must agree to the Code of Conduct
-            featured below:<br></p>
-  
-          <hr width="10%">
-  
-          <h6><i>Code of Conduct</i></h6>
-  
-          <h5>
-            <p>- I am aware that I will be matched with someone who has different opinions from me.</p>
-  
-            <p>- I will treat all users with respect and will conduct myself in a respectful manner.</p>
-  
-            <p> - I understand that <b>Find Your (Mis)fit</b> will not accept or tolerate any discriminatory comments/actions
-              against anyone because of race, religion, sexuality, or any other means.</p>
-          </h5>
-  
-          <!-- makeshift submit button for code of conduct -->
-  
-              
-  
-          <form onsubmit="return checkForm(this);">
-            <p><input onchange="this.setCustomValidity(validity.valueMissing ? 'Please accept the Code of Conduct to proceed to the survey.' : '');"
-                id="field_terms" type="checkbox" required name="terms"> I accept the <u>Code of Conduct</u></p>
-            <p><input type="submit"></p>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Proceed To Survey</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+          <div class="modal-body">
+            <div class="form">
+
+              <div class="tab-group">
+                <div class="signup-tab"><a href="#signup">Sign Up</a></div>
+                <div class="login-tab"><a href="#login">Log In</a></div>
+              </div>
+
+              <div class="tab-content">
+                <div id="signup">
+                  <h1>Sign Up for Free</h1>
+
+                  <form action="/" method="post">
+
+                    <div class="top-row">
+                      <div class="field-wrap">
+                        <label>
+                          First Name<span class="req"></span>
+                        </label>
+                        <input type="text" required autocomplete="off" />
+                      </div>
+
+                      <div class="field-wrap">
+                        <label>
+                         Last Name<span class="req"></span>
+                        </label>
+                        <input type="text" required autocomplete="off" />
+                      </div>
+                    </div>
+                    <div class="field-wrap">
+                      <label>
+                        Email <span class="req"></span>
+                      </label>
+                      <input type="text" required autocomplete="off" />
+                    </div>
+                    <div class="field-wrap">
+                      <label>
+                        Username<span class="req"></span>
+                      </label>
+                      <input type="email" required autocomplete="off" />
+                    </div>
+                    <div class="field-wrap">
+                      <label>
+                        Password<span class="req"></span>
+                      </label>
+                      <input type="password" required autocomplete="off" />
+                    </div>
+
+                    <button type="submit" class="button button-block">Get Started</button>
+
+                  </form>
+
+                </div>
+
+                <div id="login">
+                  <h1>Welcome Back!</h1>
+
+                  <form action="/" method="post">
+
+                    <div class="field-wrap">
+                      <label>
+                        Email<span class="req"></span>
+                      </label>
+                      <input type="email" required autocomplete="off" />
+                    </div>
+
+                    <div class="field-wrap">
+                      <label>
+                        Password<span class="req"></span>
+                      </label>
+                      <input type="password" required autocomplete="off" />
+                    </div>
+
+                    <p class="forgot"><a href="#">Forgot Password?</a></p>
+
+                    <button class="button button-block">Log In</button>
+
+                  </form>
+
+                </div>
+
+              </div> <!-- tab-content -->
+              </form>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+
+      <button type="button" class="btn btn-primary signup-btn" data-toggle="modal" data-target="#sign-up-modal">
+          Sign-up / Login
+      </button>
 
 
-  <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Instructions</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-              <h1>Log In</h1>
-              <hr>
-              <form action="/login" method="POST">
-                  <input type="text" name="username">
-                  <input type="text" name="password">
-                  <button type="submit">Submit</button>
-              </form>
-                    
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-  </div>  
-  
-  
-  <!-- Button trigger modal -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 
-  <button type="button" class="btn btn-primary signupbtn" data-toggle="modal" data-target="#sign-up-modal">
-    Sign-up / Login
-  </button>
+          <script>
+            $('.form').find('input, textarea').on('keyup blur focus', function (e) {
 
-  <button type="button" class="btn btn-primary surveybtn" data-toggle="modal" data-target="#survey-modal">
-    Start Survey
-  </button>
+              var $this = $(this),
+                label = $this.prev('label');
 
-  
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+              if (e.type === 'keyup') {
+                if ($this.val() === '') {
+                  label.removeClass('active highlight');
+                } else {
+                  label.addClass('active highlight');
+                }
+              } else if (e.type === 'blur') {
+                if ($this.val() === '') {
+                  label.removeClass('active highlight');
+                } else {
+                  label.removeClass('highlight');
+                }
+              } else if (e.type === 'focus') {
 
-  <script>checkForm(form)
-    {
-      if (!form.terms.checked) {
-        alert("Please agree to the Code of Conduct.");
-        form.terms.focus();
-        return false;
-      }
-      return true;
-    }
+                if ($this.val() === '') {
+                  label.removeClass('highlight');
+                }
+                else if ($this.val() !== '') {
+                  label.addClass('highlight');
+                }
+              }
 
-  </script>
+            });
+
+            $('.signup-tab a').on('click', function (e) {
+
+              e.preventDefault();
+
+              $(this).parent().addClass('active');
+              $(this).parent().siblings().removeClass('active');
+
+              target = $(this).attr('href');
+
+              $('.tab-content > div').not(target).hide();
+
+              $(target).fadeIn(600);
+
+            });
+
+            $('.login-tab a').on('click', function (e) {
+
+              e.preventDefault();
+
+              $(this).parent().addClass('active');
+              $(this).parent().siblings().removeClass('active');
+
+              target = $(this).attr('href');
+
+              $('.tab-content > div').not(target).hide();
+
+              $(target).fadeIn(600);
+
+            });
+
+          </script>
+
 
   <script src="./dist/choreographer.min.js"></script>
   <script src="./index.js"></script>
