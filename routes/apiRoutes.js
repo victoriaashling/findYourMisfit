@@ -1,37 +1,10 @@
 // var db = require("../models");
-
-// module.exports = function(app) {
-// Get all examples
-// app.get("/api/examples", function(req, res) {
-//   db.Example.findAll({}).then(function(dbExamples) {
-//     res.json(dbExamples);
-//   });
-// });
-
-// Create a new example
-// app.post("/api/examples", function(req, res) {
-//   db.Example.create(req.body).then(function(dbExample) {
-//     res.json(dbExample);
-//   });
-// });
-
-// Delete an example by id
-//   app.delete("/api/examples/:id", function(req, res) {
-//     db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-//       res.json(dbExample);
-//     });
-//   });
-// };
-/////////////////////////////////////////////////////////////////////////
-//The above code was given to us with the files.  Here I am 
-//going to make the algorithm for finding the (mis)matches.
-//note: misfits variable, bestmisMatch
-
-var misfitsList = require("../data/misfits.js");
-
 // var bodyParser = require("body-parser");
 // var path = require("path");
 
+
+// var misfitsList = require("../data/misfits.js");
+const misfitsList = [1, 2, 3];
 
 
 module.exports = function(app) {
