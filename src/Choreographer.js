@@ -1,5 +1,5 @@
-const Animation = require('./Animation')
-const defaultAnimations = require('./defaultAnimations')
+const Animation = require("./Animation")
+const defaultAnimations = require("./defaultAnimations")
 
 // Store a no-op
 const noop = () => {}
@@ -30,7 +30,7 @@ class Choreographer {
     * @param {Array} animations | An array of your new Animation class config objects.
    **/
   updateAnimations(animations) {
-    // Wipe out the old animations and replace 'em.
+    // Wipe out the old animations and replace "em.
     this.animations = animations.map(anim => {
       anim.fn = this.getAnimationFn(anim.type)
       return new Animation(anim)
@@ -42,9 +42,9 @@ class Choreographer {
    **/
   runAnimationsAt(position) {
 
-    // Clear all the nodes' 'animated' attribute.
+    // Clear all the nodes" "animated" attribute.
     this.animations.forEach(anim => {
-      anim.nodes.forEach(node => node.setAttribute('animated', ''))
+      anim.nodes.forEach(node => node.setAttribute("animated", ""))
     })
 
     // Run and done.

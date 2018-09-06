@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-var Choreographer = require('./Choreographer');
+var Choreographer = require("./Choreographer");
 module.exports = Choreographer;
 
 window.Choreographer = Choreographer;
