@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    Profile.asociate = function(models) {
+    Profile.associate = function(models) {
         models.Profile.belongsTo(models.User, {
           onDelete: "CASCADE",
           foreignKey: {

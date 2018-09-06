@@ -44,6 +44,13 @@ module.exports = function(app) {
     app.use(passport.session());
 
 
+    function ensureAuthenticated (req, res, next) {
+        if (req.isAuthenticated()) { 
+            return next();
+        }
+        res.redirect('/');
+    }
+
 
     app.get("/login", (req, res) => {
         db.User.findAll({}).then(resultData => {
@@ -57,7 +64,8 @@ module.exports = function(app) {
         let newUser = req.body;
         // add to database, redirect and authenticate, redirect to survey
         db.User.create({ handle: newUser.username, email: newUser.email, password: newUser.password }).then(user => {
-            db.Profile.create({ firstName: newUser.firstName, lastName: newUser.lastName, UsersId: user.id }).then(profile => {
+            console.log("user: " + user.dataValues);
+            db.Profile.create({ firstName: newUser.firstName, lastName: newUser.lastName, UserId: user.dataValues.id }).then(profile => {
                 console.log(profile.dataValues);
                 res.redirect("/survey");
             });
@@ -68,9 +76,14 @@ module.exports = function(app) {
         console.log("success", req.body);
     });
 
-    app.get("/profile", ensure.ensureLoggedIn(), (req, res) => {
+    app.get("/profile", ensureAuthenticated, (req, res) => {
         console.log(req.user.dataValues);
         res.render("profile", req.user.dataValues);
     });
+
+    app.get("/logout", (req, res) => {
+        req.logout();
+        res.redirect("/");
+    })
 
 }
