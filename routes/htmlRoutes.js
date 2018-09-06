@@ -10,4 +10,8 @@ const path = require("path");
     res.render('index');
   });
 
+  router.get("/survey", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/html/survey.html"));
+  })
+
 module.exports = router;

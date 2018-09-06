@@ -75,40 +75,40 @@
                 <div id="signup">
                   <h1>Sign Up for Free</h1>
 
-                  <form action="/" method="post">
+                  <form action="/newUser" method="POST">
 
                     <div class="top-row">
                       <div class="field-wrap">
                         <label>
                           First Name<span class="req"></span>
                         </label>
-                        <input type="text" required autocomplete="off" />
+                        <input type="text" required autocomplete="off" name="firstName" />
                       </div>
 
                       <div class="field-wrap">
                         <label>
                          Last Name<span class="req"></span>
                         </label>
-                        <input type="text" required autocomplete="off" />
+                        <input type="text" required autocomplete="off" name="lastName"/>
                       </div>
                     </div>
                     <div class="field-wrap">
                       <label>
                         Email <span class="req"></span>
                       </label>
-                      <input type="text" required autocomplete="off" />
+                      <input type="email" required autocomplete="off" name="email"/>
                     </div>
                     <div class="field-wrap">
                       <label>
                         Username<span class="req"></span>
                       </label>
-                      <input type="email" required autocomplete="off" />
+                      <input type="text" required autocomplete="off" name="username"/>
                     </div>
                     <div class="field-wrap">
                       <label>
                         Password<span class="req"></span>
                       </label>
-                      <input type="password" required autocomplete="off" />
+                      <input type="password" required autocomplete="off" name="password"/>
                     </div>
 
                     <button type="submit" class="button button-block">Get Started</button>
@@ -120,25 +120,25 @@
                 <div id="login">
                   <h1>Welcome Back!</h1>
 
-                  <form action="/" method="post">
+                  <form action="/login" method="post">
 
                     <div class="field-wrap">
                       <label>
                         Email<span class="req"></span>
                       </label>
-                      <input type="email" required autocomplete="off" />
+                      <input type="email" required autocomplete="off" name="username"/>
                     </div>
 
                     <div class="field-wrap">
                       <label>
                         Password<span class="req"></span>
                       </label>
-                      <input type="password" required autocomplete="off" />
+                      <input type="password" required autocomplete="off" name="password"/>
                     </div>
 
                     <p class="forgot"><a href="#">Forgot Password?</a></p>
 
-                    <button class="button button-block">Log In</button>
+                    <button type="submit" class="button button-block">Log In</button>
 
                   </form>
 
