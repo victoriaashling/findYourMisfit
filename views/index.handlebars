@@ -1,33 +1,236 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+<!DOCTYPE html>
+<html>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway|Rubik" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+      <link rel="stylesheet" href="/index.css">
+
+  <title>Find Your (mis)Fit</title>
+
+</head>
+
+<body>
+
+  <div id="wrapper">
+    <div id="letters">
+      <div class="c">f</div>
+      <div class="h">i</div>
+      <div class="o">n</div>
+      <div class="r">d</div>
+      <div class="e">y</div>
+      <div class="o">o</div>
+      <div class="g">u</div>
+      <div class="r">r</div>
+      <div class="a">(</div>
+      <div class="p">m</div>
+      <div class="h">i</div>
+      <div class="e">s</div>
+      <div class="r">)</div>
+      <div class="dash">f</div>
+      <div class="j">i</div>
+      <div class="s">t</div>
+
+      <br />
+      <div class="line"></div>
+
+      <p class="description">
+        Have a conversation with someone new and different!
+      </p>
+    </div>
+    <div class="scroll-overlay"></div>
+  </div>
+
+  <div class="scroll-down">
+    <p>scroll down</p>
+    <div class="down-arrow"></div>
+  </div>
+
+  <div class="links">
+    <div class="quickstart"></div>
+
+    <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="form">
+
+              <div class="tab-group">
+                <div class="signup-tab"><a href="#signup">Sign Up</a></div>
+                <div class="login-tab"><a href="#login">Log In</a></div>
+              </div>
+
+              <div class="tab-content">
+                <div id="signup">
+                  <h1>Sign Up for Free</h1>
+
+                  <form action="/newUser" method="POST">
+
+                    <div class="top-row">
+                      <div class="field-wrap">
+                        <label>
+                          First Name<span class="req"></span>
+                        </label>
+                        <input type="text" required autocomplete="off" name="firstName" />
+                      </div>
+
+                      <div class="field-wrap">
+                        <label>
+                         Last Name<span class="req"></span>
+                        </label>
+                        <input type="text" required autocomplete="off" name="lastName"/>
+                      </div>
+                    </div>
+                    <div class="field-wrap">
+                      <label>
+                        Email <span class="req"></span>
+                      </label>
+                      <input type="email" required autocomplete="off" name="email"/>
+                    </div>
+                    <div class="field-wrap">
+                      <label>
+                        Username<span class="req"></span>
+                      </label>
+                      <input type="text" required autocomplete="off" name="username"/>
+                    </div>
+                    <div class="field-wrap">
+                      <label>
+                        Password<span class="req"></span>
+                      </label>
+                      <input type="password" required autocomplete="off" name="password"/>
+                    </div>
+
+                    <button type="submit" class="button button-block">Get Started</button>
+
+                  </form>
+
+                </div>
+
+                <div id="login">
+                  <h1>Welcome Back!</h1>
+
+                  <form action="/login" method="post">
+
+                    <div class="field-wrap">
+                      <label>
+                        Email<span class="req"></span>
+                      </label>
+                      <input type="email" required autocomplete="off" name="username"/>
+                    </div>
+
+                    <div class="field-wrap">
+                      <label>
+                        Password<span class="req"></span>
+                      </label>
+                      <input type="password" required autocomplete="off" name="password"/>
+                    </div>
+
+                    <p class="forgot"><a href="#">Forgot Password?</a></p>
+
+                    <button type="submit" class="button button-block">Log In</button>
+
+                  </form>
+
+                </div>
+
+              </div> <!-- tab-content -->
+              </form>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary signup-btn" data-toggle="modal" data-target="#sign-up-modal">
+          Sign-up / Login
+      </button>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+          <script>
+            $('.form').find('input, textarea').on('keyup blur focus', function (e) {
+
+              var $this = $(this),
+                label = $this.prev('label');
+
+              if (e.type === 'keyup') {
+                if ($this.val() === '') {
+                  label.removeClass('active highlight');
+                } else {
+                  label.addClass('active highlight');
+                }
+              } else if (e.type === 'blur') {
+                if ($this.val() === '') {
+                  label.removeClass('active highlight');
+                } else {
+                  label.removeClass('highlight');
+                }
+              } else if (e.type === 'focus') {
+
+                if ($this.val() === '') {
+                  label.removeClass('highlight');
+                }
+                else if ($this.val() !== '') {
+                  label.addClass('highlight');
+                }
+              }
+
+            });
+
+            $('.signup-tab a').on('click', function (e) {
+
+              e.preventDefault();
+
+              $(this).parent().addClass('active');
+              $(this).parent().siblings().removeClass('active');
+
+              target = $(this).attr('href');
+
+              $('.tab-content > div').not(target).hide();
+
+              $(target).fadeIn(600);
+
+            });
+
+            $('.login-tab a').on('click', function (e) {
+
+              e.preventDefault();
+
+              $(this).parent().addClass('active');
+              $(this).parent().siblings().removeClass('active');
+
+              target = $(this).attr('href');
+
+              $('.tab-content > div').not(target).hide();
+
+              $(target).fadeIn(600);
+
+            });
+
+          </script>
+
+
+  <script src="/choreographer.min.js"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>

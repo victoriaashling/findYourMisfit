@@ -4,8 +4,8 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Animation = require("./Animation");
-var defaultAnimations = require("./defaultAnimations");
+var Animation = require("../dist/Animation");
+var defaultAnimations = require("../dist/defaultAnimations");
 
 // Store a no-op
 var noop = function noop() {};
