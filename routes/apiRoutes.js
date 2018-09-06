@@ -1,3 +1,5 @@
+const router = require('express').Router();
+
 // var db = require("../models");
 // var bodyParser = require("body-parser");
 // var path = require("path");
@@ -7,13 +9,11 @@
 const misfitsList = [1, 2, 3];
 
 
-module.exports = function(app) {
-
-  app.get("/api/misfits", function(req, res){
+  router.get("/api/misfits", function(req, res){
     res.json(misfitsList);
   });
 
-  app.post("/api/misfits", function(req, res){
+  router.post("/api/misfits", function(req, res){
     //do we want to ask for photos?
     var bestmisMatch = {
       "name": "none",
@@ -56,4 +56,4 @@ module.exports = function(app) {
     res.json(bestmisMatch);
   });
 
-};
+  module.exports = router;
