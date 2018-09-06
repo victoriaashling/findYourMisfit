@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-var getInjectedTransformString = require('./getInjectedTransformString');
+var getInjectedTransformString = require("./getInjectedTransformString");
 
 /** @method scale
   * [built-in animation function]
@@ -12,7 +12,7 @@ var getInjectedTransformString = require('./getInjectedTransformString');
   *          {Number} from     | minimum value
   *          {Number} to       | maximum value
   *          {Number} progress | a value between 0 and 1; the proportion of value we should use
-  *          {String} unit     | optional - unit value, e.g. 'px' or '%'
+  *          {String} unit     | optional - unit value, e.g. "px" or "%"
   *        }
  **/
 var scale = function scale(data) {
@@ -21,14 +21,14 @@ var scale = function scale(data) {
   // Stick on the unit, if there is one.
   var scaledValueString = data.unit ? scaledValue + data.unit : scaledValue;
 
-  // If it's a regular old style property, just replace the value. No fuss.
-  if (data.style.split(':').length === 1) {
+  // If it"s a regular old style property, just replace the value. No fuss.
+  if (data.style.split(":").length === 1) {
     data.node.style[data.style] = scaledValueString;
     return;
   }
 
   /*~~ If the style is a CSS transform, we gotta do some funky shit. ~~*/
-  var transformProp = data.style.split(':')[1];
+  var transformProp = data.style.split(":")[1];
   data.node.style.transform = getInjectedTransformString(data.node, transformProp, scaledValueString);
 };
 
@@ -47,18 +47,18 @@ var change = function change(data) {
   var newValueString = newValue && data.unit ? newValue + data.unit : newValue;
 
   // If the progress is less than 0, we just need to nullify this style value.
-  // But, if the style prop is 'transition', apply it only after the last transition ends.
-  if (data.progress < 0 && data.style === 'transition') {
-    data.node.addEventListener('transitionend', function (e) {
+  // But, if the style prop is "transition", apply it only after the last transition ends.
+  if (data.progress < 0 && data.style === "transition") {
+    data.node.addEventListener("transitionend", function (e) {
       if (e.target === data.node) data.node.style[data.style] = null;
     });
     return;
   }
 
-  // If it's a regular old style property, just replace the value. No fuss.
-  if (data.style.split(':').length === 1) {
-    if (data.style === 'class') {
-      data.node.classList[newValue ? 'add' : 'remove'](data.to);
+  // If it"s a regular old style property, just replace the value. No fuss.
+  if (data.style.split(":").length === 1) {
+    if (data.style === "class") {
+      data.node.classList[newValue ? "add" : "remove"](data.to);
       return;
     }
 
@@ -67,7 +67,7 @@ var change = function change(data) {
   }
 
   /*~~ If the style is a CSS transform, we gotta do some funky shit. ~~*/
-  var transformProp = data.style.split(':')[1];
+  var transformProp = data.style.split(":")[1];
   data.node.style.transform = getInjectedTransformString(data.node, transformProp, newValueString);
 };
 

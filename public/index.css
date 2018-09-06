@@ -14,6 +14,64 @@ body {
   /* border: black 200px solid; */
 }
 
+
+/* Modal */
+
+.modal-quotes {
+  font-size: 13px;
+  font-family: 'Raleway', sans-serif;
+  font-style: italic;
+}
+
+.conduct-body {
+  margin: 2px;
+  font-size: 12px;
+}
+
+h5 {
+  font-family: Arial;
+}
+
+#signup, #login {
+  display: none;
+}
+
+.modal-dialog {
+  box-shadow: 5px 5px black;
+}
+
+.signup-tab, .login-tab {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.signup-tab {
+    padding: 15px 32px;
+    background-color: #ffb3b3;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#signup, #login {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.login-tab {
+  padding: 15px 32px;
+  background-color: #99ebff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.signup-tab a, .signup-tab a:hover, .login-tab a, .login-tab a:hover {
+  color: white;
+}
+
 ::-webkit-scrollbar { display: none; }
 
 p {
@@ -21,13 +79,14 @@ p {
   letter-spacing: 0.05em;
 }
 
-a { text-decoration: none; }
+a { 
+  text-decoration: none; 
+}
 
 #wrapper {
   height: 400vh;
   display: flex;
   justify-content: center;
-  /* background-color: #f5f5f5; */
 }
 
 .scroll-overlay {
@@ -69,27 +128,27 @@ a { text-decoration: none; }
 .links {
   height: calc(100vh - 420px);
   text-align: center;
-}
-
-.links .quickstart {
-  font-family: 'Inconsolata', monospace;
-  background-color: #080808;
-  color: white;
   padding: 20px;
   display: inline-block;
-  margin: 0 auto;
   border-radius: 5px;
+  margin: auto;
+  width: 100%;
+
+}
+
+.quickstart  {
+  display: none;
 }
 
 .links button {
   display: block;
   margin: 10px auto;
-  padding: 10px;
-  font-size: 10px;
+  padding: 20px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
-  background-color: #aaa;
+  background-color: #95cc21;
   color: white;
   border: none;
   border-radius: 5px;
@@ -97,7 +156,7 @@ a { text-decoration: none; }
 }
 
 .links button:hover {
-  background-color: #95cc21;
+  background-color: #fc567e;
 }
 
 .scroll-down {
@@ -125,7 +184,6 @@ a { text-decoration: none; }
   border-bottom: 1px solid black;
   border-right: 1px solid black;
 }
-
 
 @media (max-width:660px) {
   #letters div {
