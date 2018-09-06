@@ -1,6 +1,19 @@
 module.exports = function(sequelize, DataTypes) {
     const Profile = sequelize.define("Profile", {
-        // not sure what we're going to put in here yet.
+        firstName: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        lastName: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        chatMatch: {
+            type: DataTypes.STRING,
+        },
+        namespace: {
+            type: DataTypes.STRING
+        }
     });
 
     Profile.asociate = function(models) {

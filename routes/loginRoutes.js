@@ -18,7 +18,8 @@ module.exports = function(app) {
 
     passport.use(new Strategy(
         (username, password, cb) => {
-            db.User.findOne({ where: {handle: username} }).then((user) => {
+            console.log("hello ", username);
+            db.User.findOne({ where: {email: username} }).then((user) => {
                 // if (err) {return cb(err)}
                 if (!user) {return cb(null, false)}
                 if (user.dataValues.password !== password) {return cb(null, false)}
@@ -43,9 +44,6 @@ module.exports = function(app) {
     app.use(passport.session());
 
 
-    // app.get("/", (req, res) => {
-    //     res.sendFile(path.join(__dirname, "login.html"));
-    // });
 
     app.get("/login", (req, res) => {
         db.User.findAll({}).then(resultData => {
@@ -56,17 +54,23 @@ module.exports = function(app) {
 
     app.post("/newUser", (req, res) => {
         console.log(req.body);
-        res.end();
+        let newUser = req.body;
+        // add to database, redirect and authenticate, redirect to survey
+        db.User.create({ handle: newUser.username, email: newUser.email, password: newUser.password }).then(user => {
+            db.Profile.create({ firstName: newUser.firstName, lastName: newUser.lastName, UsersId: user.id }).then(profile => {
+                console.log(profile.dataValues);
+                res.redirect("/survey");
+            });
+        });
     });
 
-    app.post("/login", passport.authenticate("local", {failureRedirect: "/"}), (req, res) => {
+    app.post("/login", passport.authenticate("local", {successRedirect: "/profile", failureRedirect: "/"}), (req, res) => {
         console.log("success", req.body);
-        //  When we get this working, redirect to their specific profile -- /users/:id -- then the get method for this route will bring up their info and available convos
-        res.sendFile(path.join(__dirname, "../public/html/success.html"));
     });
 
     app.get("/profile", ensure.ensureLoggedIn(), (req, res) => {
-        res.json({"user": req.user});
+        console.log(req.user.dataValues);
+        res.render("profile", req.user.dataValues);
     });
 
 }
