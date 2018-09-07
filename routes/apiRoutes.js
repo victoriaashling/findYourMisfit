@@ -1,8 +1,8 @@
 const router = require('express').Router();
 
-// var db = require("../models");
-// var bodyParser = require("body-parser");
-// var path = require("path");
+const db = require("../models");
+const bodyParser = require("body-parser");
+const path = require("path");
 
 
 // var misfitsList = require("../data/misfits.js");
