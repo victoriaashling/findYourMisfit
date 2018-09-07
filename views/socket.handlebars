@@ -6,11 +6,15 @@
   </head>
   <body>
     <div data-mynsp="{{this.mynsp}}" id="passingVar"></div>
-    <div><button><a href="/profile">Profile</a></button></div>
-    <div id="messages"></div>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
+    <div class="container page-body">
+      <div id="header-bar"><button class="btn btn-secondary"><a href="/profile" id="back-to-profile">Profile</a></button></div>
+
+      <div id="messages"></div>
+
+      <form action="" class="form-group row" id="message-line">
+        <input id="m" autocomplete="off" class="form-control col-sm-10" /><button class="col-sm-2 btn btn-secondary">Send</button>
+      </form>
+    </div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
