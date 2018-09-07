@@ -1,23 +1,55 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background-image: url("");font: 12px Verdana; }
-form { background-image: linear-gradient(-90deg, #3acad9, #38bae9); padding: 60px; position: fixed; bottom: 10px; width: 100%; }
-form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-#messages { list-style-type: none; margin-top: 50px; margin-left: 15px; padding: 0; }
-#messages li { padding: 5px 10px; }
-#messages li:nth-child(odd) { background: #eee; }
-#pageTitle {margin-top: 20px; text-align: center; font-size: 25px; letter-spacing: 3px; text-shadow: 1px 1px gray; }
-#chat-btn {background-color: #56eefc; color: #585858; font-weight: bold; border: 1px solid #31d1ea;
-    border-radius: 5px;}
-.tabrow {
-        text-align: center;
-        list-style: none;
-        margin: 200px 0 20px;
-        padding: 0;
-        line-height: 35px;
-        height: 37px;
-        overflow: hidden;
-        font-size: 12px;
-        position: center;
-      }
-      
+body { 
+    font: Helvetica, Arial; 
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color: white;
+    opacity: 1;
+}
+
+footer {
+    position: fixed; 
+    bottom: 0px;
+    width: 100%;
+    background-color: white;
+    opacity: 1;
+}
+
+.page-body {
+    margin-top: calc(10px + 4em);
+    margin-bottom: calc(10px + 4em);
+    overflow: auto;
+}
+
+.user-msg {
+    background-color: lavender;
+    border-radius: 5px;
+    padding: .5em;
+}
+
+.partner-msg {
+    background-color: #EEEEEE;
+    border-radius: 5px;
+    padding: .5em;
+}
+
+#back-to-profile {
+    color: white;
+    text-decoration: none;
+    padding: .5em;
+}
+
+#header-bar {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#message-line {
+    width: 90%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
