@@ -7,7 +7,7 @@
   <body>
     <div data-mynsp="{{this.mynsp}}" id="passingVar"></div>
     <div><button><a href="/profile">Profile</a></button></div>
-    <ul id="messages"></ul>
+    <div id="messages"></div>
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
     </form>
@@ -16,18 +16,22 @@
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
     $(function () {
-        let mynsp = $("#passingVar").data("mynsp");
-        var socket = io(mynsp);
+        let mynsp = document.getElementById("passingVar").dataset.mynsp;  
+        let socket = io(mynsp);
+        
         $('form').submit(function(){
-          console.log("form submitted");
-          socket.emit('chat message', $('#m').val());
+          let msg = $('#m').val();
+          let userMsg = $("<div class='clearfix'><p class='user-msg float-right'>" + msg + "</p></div>");
+          $("#messages").append(userMsg);
+
+          socket.emit('chat message', msg);
           $('#m').val('');
           return false;
         });
 
         socket.on('chat message', function(msg){
-            $('#messages').append($('<li>').text(msg));
-        });
+          $("#messages").append($("<div class='clearfix'><p class='partner-msg float-left'>" + msg + "</p></div>"));
+        });        
     });
     </script>
   </body>
