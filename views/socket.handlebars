@@ -6,14 +6,18 @@
   </head>
   <body>
     <div data-mynsp="{{this.mynsp}}" id="passingVar"></div>
-    <div class="container page-body">
-      <div id="header-bar"><button class="btn btn-secondary"><a href="/profile" id="back-to-profile">Profile</a></button></div>
+    <div class="container">
+      <header>
+        <div id="header-bar"><button class="btn btn-secondary"><a href="/profile" id="back-to-profile">Profile</a></button></div>
+      </header>
 
-      <div id="messages"></div>
+      <div id="messages" class="page-body"></div>
 
-      <form action="" class="form-group row" id="message-line">
-        <input id="m" autocomplete="off" class="form-control col-sm-10" /><button class="col-sm-2 btn btn-secondary">Send</button>
-      </form>
+      <footer>
+        <form action="" class="form-group row" id="message-line">
+          <input id="m" autocomplete="off" class="form-control col-sm-10" /><button class="col-sm-2 btn btn-secondary">Send</button>
+        </form>
+      </footer>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
