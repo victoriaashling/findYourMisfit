@@ -3,13 +3,16 @@
   <head>
     <title>My Chat</title>
     <link rel="stylesheet" type="text/css" href="/styles/socket.css">
+    <link rel="stylesheet" href="animate.min.css">
   </head>
   <body>
     <div data-mynsp="{{this.mynsp}}" id="passingVar"></div>
+    <center><h5 id="pageTitle" class="tabrow">(mis)Fit Chatroom</h5></center>
+    <center><hr width="10%"></center>
     <div><button><a href="/profile">Profile</a></button></div>
     <ul id="messages"></ul>
     <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
+      <input id="m" autocomplete="off" placeholder="Type your chat here." /><button id="chat-btn">Send</button>
     </form>
 
     <script src="/socket.io/socket.io.js"></script>
