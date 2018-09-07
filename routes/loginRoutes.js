@@ -16,7 +16,7 @@ module.exports = function(app) {
     app.use(require("express-session")({ secret: 'password', resave: false, saveUninitialized: false }));
 
 
-    passport.use(new Strategy(
+    passport.use("local-signin", new Strategy(
         (username, password, cb) => {
             console.log("hello ", username);
             db.User.findOne({ where: {email: username} }).then((user) => {
@@ -24,11 +24,37 @@ module.exports = function(app) {
                 if (!user) {return cb(null, false)}
                 if (user.dataValues.password !== password) {return cb(null, false)}
         
-                console.log("user: ", user, user.dataValues);
+                console.log("user: ", user.dataValues);
                 return cb(null, user);
             })
         })
     );
+
+    passport.use("local-signup", new Strategy({
+        usernameField: "username",
+        passwordField: "password",
+        passReqToCallback: true
+    },
+        (req, username, password, cb) => {
+            console.log("hello ", username);
+            db.User.findOne({ where: {handle: username} }).then((user) => {
+                if (user) {return cb(null, false)}
+                else {
+                    console.log(req.body);
+                    let newUser = req.body;
+            
+                    db.User.create({ handle: newUser.username, email: newUser.email, password: newUser.password }).then(user => {
+                        db.Profile.create({ firstName: newUser.firstName, lastName: newUser.lastName, UserId: user.dataValues.id }).then(profile => {
+                            console.log("hello from inside");
+                            return cb(null, user);
+                        });
+                    });
+                }
+                
+            })
+        })
+    );
+
 
     passport.serializeUser((user, cb) => {
         cb(null, user.id);
@@ -54,32 +80,29 @@ module.exports = function(app) {
 
     app.get("/login", (req, res) => {
         db.User.findAll({}).then(resultData => {
-            console.log(resultData);
             res.json(resultData);
         });
     });
 
-    app.post("/newUser", (req, res) => {
-        console.log(req.body);
-        let newUser = req.body;
-        // add to database, redirect and authenticate, redirect to survey
-        db.User.create({ handle: newUser.username, email: newUser.email, password: newUser.password }).then(user => {
-            console.log("user: " + user.dataValues);
-            db.Profile.create({ firstName: newUser.firstName, lastName: newUser.lastName, UserId: user.dataValues.id }).then(profile => {
-                console.log(profile.dataValues);
-                res.redirect("/survey");
-            });
-        });
+    app.post("/newUser", passport.authenticate("local-signup", {successRedirect: "/survey", failureMessage: "User already exists."}), (req, res) => {
+       console.log("sign-up/in success");
     });
 
-    app.post("/login", passport.authenticate("local", {successRedirect: "/profile", failureRedirect: "/"}), (req, res) => {
-        console.log("success", req.body);
+    app.post("/login", passport.authenticate("local-signin", {successRedirect: "/profile", failureRedirect: "/"}), (req, res) => {
+        console.log("success");
     });
 
     app.get("/profile", ensureAuthenticated, (req, res) => {
-        console.log(req.user.dataValues);
-        res.render("profile", req.user.dataValues);
+        db.Profile.findOne({ where: {UserId: req.user.dataValues.id} }).then(userProfile => {
+            console.log(userProfile.dataValues);
+            res.render("profile", userProfile.dataValues);
+        });
     });
+
+    // app.post("/survey", ensureAuthenticated, (req, res) => {
+    //     console.log(req.body);
+    //     res.end();
+    // });
 
     app.get("/logout", (req, res) => {
         req.logout();

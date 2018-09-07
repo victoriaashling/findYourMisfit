@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway|Rubik" rel="stylesheet">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-        crossorigin="anonymous">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
       <link rel="stylesheet" href="/index.css">
 
   <title>Find Your (mis)Fit</title>
@@ -73,42 +72,42 @@
 
               <div class="tab-content">
                 <div id="signup">
-                  <h1>Sign Up for Free</h1>
+                  <h1>Sign Up</h1>
 
                   <form action="/newUser" method="POST">
 
-                    <div class="top-row">
-                      <div class="field-wrap">
-                        <label>
+                    <div class="top-row container">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">
                           First Name<span class="req"></span>
                         </label>
-                        <input type="text" required autocomplete="off" name="firstName" />
+                        <input type="text" required autocomplete="off" name="firstName" class="col-sm-9 form-control" />
                       </div>
 
-                      <div class="field-wrap">
-                        <label>
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">
                          Last Name<span class="req"></span>
                         </label>
-                        <input type="text" required autocomplete="off" name="lastName"/>
+                        <input type="text" required autocomplete="off" name="lastName" class="col-sm-9 form-control" />
                       </div>
-                    </div>
-                    <div class="field-wrap">
-                      <label>
-                        Email <span class="req"></span>
-                      </label>
-                      <input type="email" required autocomplete="off" name="email"/>
-                    </div>
-                    <div class="field-wrap">
-                      <label>
-                        Username<span class="req"></span>
-                      </label>
-                      <input type="text" required autocomplete="off" name="username"/>
-                    </div>
-                    <div class="field-wrap">
-                      <label>
-                        Password<span class="req"></span>
-                      </label>
-                      <input type="password" required autocomplete="off" name="password"/>
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">
+                          Email <span class="req"></span>
+                        </label>
+                        <input type="email" required autocomplete="off" name="email" class="col-sm-9 form-control" />
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">
+                          Username<span class="req"></span>
+                        </label>
+                        <input type="text" required autocomplete="off" name="username" class="col-sm-9 form-control" />
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">
+                          Password<span class="req"></span>
+                        </label>
+                        <input type="password" required autocomplete="off" name="password" class="col-sm-9 form-control" />
+                      </div>
                     </div>
 
                     <button type="submit" class="button button-block">Get Started</button>
@@ -120,20 +119,20 @@
                 <div id="login">
                   <h1>Welcome Back!</h1>
 
-                  <form action="/login" method="post">
+                  <form action="/login" method="post" class="container">
 
-                    <div class="field-wrap">
-                      <label>
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">
                         Email<span class="req"></span>
                       </label>
-                      <input type="email" required autocomplete="off" name="username"/>
+                      <input type="email" required autocomplete="off" name="username" class="col-sm-9 form-control"/>
                     </div>
 
-                    <div class="field-wrap">
-                      <label>
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">
                         Password<span class="req"></span>
                       </label>
-                      <input type="password" required autocomplete="off" name="password"/>
+                      <input type="password" required autocomplete="off" name="password" class="col-sm-9 form-control"/>
                     </div>
 
                     <p class="forgot"><a href="#">Forgot Password?</a></p>
@@ -149,9 +148,9 @@
             </div>
           </div>
 
-          <div class="modal-footer">
+          {{!-- <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>
