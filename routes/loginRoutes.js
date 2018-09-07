@@ -46,10 +46,6 @@ module.exports = function(app) {
                     db.User.create({ handle: newUser.username, email: newUser.email, password: newUser.password }).then(user => {
                         db.Profile.create({ firstName: newUser.firstName, lastName: newUser.lastName, UserId: user.dataValues.id }).then(profile => {
                             console.log("hello from inside");
-                            // let returnedUser = {
-                            //     username: req.body.email,
-                            //     password: req.body.password
-                            // }
                             return cb(null, user);
                         });
                     });
@@ -88,12 +84,6 @@ module.exports = function(app) {
         });
     });
 
-    // function loginShenan(req, res, next) {
-        // still try to pass data into req.body for next?
-    // }
-
-    // app.use("/newUser", loginShenan);
-
     app.post("/newUser", passport.authenticate("local-signup", {successRedirect: "/survey", failureMessage: "User already exists."}), (req, res) => {
        console.log("sign-up/in success");
     });
@@ -103,7 +93,10 @@ module.exports = function(app) {
     });
 
     app.get("/profile", ensureAuthenticated, (req, res) => {
-        res.render("profile", req.user.dataValues);
+        db.Profile.findOne({ where: {UserId: req.user.dataValues.id} }).then(userProfile => {
+            console.log(userProfile.dataValues);
+            res.render("profile", userProfile.dataValues);
+        });
     });
 
     // app.post("/survey", ensureAuthenticated, (req, res) => {
