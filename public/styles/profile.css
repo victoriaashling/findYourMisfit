@@ -1,0 +1,68 @@
+h1 {
+  text-align: center;
+  color: #8485f6;
+}
+
+body {
+  background-image: url("https://webdesignledger.com/wp-content/uploads/2012/09/patterns06.jpg");
+}
+
+.jumbotron-fluid {
+  margin-top: 70px;
+  margin-bottom: 30px;
+  margin-left: 80px;
+  margin-right: 80px;
+  border-bottom: 1px solid;
+  box-shadow: 5px 5px rgb(70, 70, 70);
+}
+
+.user-greeting {
+  letter-spacing: 3px; 
+  text-shadow: 1px 1px gray;
+}
+
+#chat-btn {
+  background-color: #fd8b30;
+  display: inline-block;
+  margin: 10px auto;
+  padding: 20px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+#chat-btn a:hover, #logout a:hover {
+  text-decoration: none;
+}
+
+#chat-btn:hover {
+  background-color: #fc279b;
+}
+
+#logout:hover {
+  background-color: #48efb2;
+}
+
+#logout {
+  background-color: #31d1ea;
+  display: inline-block;
+  margin: 10px auto;
+  padding: 20px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+
+
+
