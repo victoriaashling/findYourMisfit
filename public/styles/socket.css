@@ -29,12 +29,14 @@ footer {
     background-color: lavender;
     border-radius: 5px;
     padding: .5em;
+    max-width: 65%;
 }
 
 .partner-msg {
     background-color: #EEEEEE;
     border-radius: 5px;
     padding: .5em;
+    max-width: 65%;
 }
 
 #back-to-profile {
