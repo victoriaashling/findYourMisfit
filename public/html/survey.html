@@ -571,6 +571,7 @@
 
     <script>
         $("#accept-btn").click(function() {
+            console.log("clicked!");
             $.post("/api/misfits").then(data => {
                 console.log(data);
             });
