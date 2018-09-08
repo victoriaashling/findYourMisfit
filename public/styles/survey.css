@@ -13,15 +13,56 @@ h1 {
   font-size: 13px;
   font-family: 'Raleway', sans-serif;
   font-style: italic;
+  text-align: center;
 }
 
-.conduct-body {
+.modal-content {
   margin: 2px;
   font-size: 12px;
+  text-align: center;
 }
 
-h5 {
-  font-family: Arial;
+.codeConduct {
+  font-family: 'Raleway', 'sans-serif';
+  font-size: 15px;
+}
+
+.accept-btn {
+  display: block;
+  margin: 10px auto;
+  padding: 20px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #95cc21;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.accept-btn:hover {
+  background-color: #fc567e;
+}
+
+.codeConduct-btn {
+  display: block;
+  margin: 10px auto;
+  padding: 20px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.codeConduct-btn:hover {
+  background-color: #fc567e;
 }
 
 html, body {padding:0;margin:0;}
@@ -91,11 +132,6 @@ h1.likert-header {
 .buttons .submit {background-color: #67ab49;} 
 .buttons .clear:hover {background-color: #ccc;}
 .buttons .submit:hover {background-color: #0da72c;}
-
-.codeConduct-btn {
-  background-color: purple;
-  color: white;
-}
 
 #accept-btn {
   color: white;
