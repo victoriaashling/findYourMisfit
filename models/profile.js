@@ -13,17 +13,21 @@ module.exports = function(sequelize, DataTypes) {
         },
         namespace: {
             type: DataTypes.STRING
+        },
+        userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
         }
     });
 
-    Profile.associate = function(models) {
-        models.Profile.belongsTo(models.User, {
-          onDelete: "CASCADE",
-          foreignKey: {
-            allowNull: false
-          }
-        });
-    };
+    // Profile.associate = function(models) {
+    //     models.Profile.belongsTo(models.User, {
+    //       onDelete: "CASCADE",
+    //       foreignKey: {
+    //         allowNull: false
+    //       }
+    //     });
+    // };
 
     return Profile;
 };
