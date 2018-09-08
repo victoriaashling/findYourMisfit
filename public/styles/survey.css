@@ -12,14 +12,7 @@ h1 {
   color: #777777
 }
 
-/* .btn{
-  border: 4px solid #0099CC;
-  border-radius: 30px;
-  background: transparent;
-  padding: 50px;
-}
-
-.btn:hover {
-  background-color: #008CBA;
+.codeConduct-btn {
+  background-color: purple;
   color: white;
-} */
+}
