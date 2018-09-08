@@ -1,20 +1,29 @@
- <!DOCTYPE html>
- <html>
- <head>
-     <meta charset="utf-8" />
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <title>Find Your (Mis)Fit (</title>
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" type="text/css" href="../styles/survey.css">
-     <script src="main.js"></script>
- </head>
- <body>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Find Your (Mis)Fit (</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway|Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../styles/survey.css">
+    <script src="main.js"></script>
+</head>
+
+<body>
 
     <h1>(Mis)Fit Questionaire</h1>
 
-    <form class="survey" action="/api/survey" method="POST">
+     <form class="survey" action="/api/survey" method="POST">
         1. I enjoy meeting new people.<br>
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-1" autocomplete="off">
             </label>
@@ -39,7 +48,7 @@
         </div>
         <br>
         2. I find it difficult to introduce myself to new people.<br>
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-2" autocomplete="off">
             </label>
@@ -64,7 +73,7 @@
         </div>
         <br>
         3. I find it easy to stay relaxed when there is no pressure.<br>
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-3" autocomplete="off">
             </label>
@@ -88,7 +97,8 @@
             </label>
         </div>
         <br>
-        4. I do not usually initiate conversations.<br> <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        4. I do not usually initiate conversations.<br>
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-4" autocomplete="off">
             </label>
@@ -113,7 +123,7 @@
         </div>
         <br>
         5. I rarely do something just out of sheer curiosity.<br>
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-5" autocomplete="off">
             </label>
@@ -137,8 +147,8 @@
             </label>
         </div>
         <br>
-        6. I do not mind being the center of attention.<br> 
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        6. I do not mind being the center of attention.<br>
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-6" autocomplete="off">
             </label>
@@ -163,7 +173,7 @@
         </div>
         <br>
         7. It is diificult for me to relate to other people's feelings.<br>
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-7" autocomplete="off">
             </label>
@@ -188,7 +198,7 @@
         </div>
         <br>
         8. I rarely worry about how my actions affect other people.<br>
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-8" autocomplete="off">
             </label>
@@ -213,7 +223,7 @@
         </div>
         <br>
         9. An interesting book or video game is often better than a social event.<br>
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-9" autocomplete="off">
             </label>
@@ -238,7 +248,7 @@
         </div>
         <br>
         10. I rarely get carried away by fantasies or ideas.<br>
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-10" autocomplete="off">
             </label>
@@ -263,7 +273,7 @@
         </div>
         <br>
         11. I am more of a natural improvisor than a careful planner.<br>
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-11" autocomplete="off">
             </label>
@@ -288,7 +298,7 @@
         </div>
         <br>
         12. My emotions control me more than I control them.<br>
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-12" autocomplete="off">
             </label>
@@ -313,7 +323,7 @@
         </div>
         <br>
         13. I am relatively reserved and quiet person.<br>
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-13" autocomplete="off">
             </label>
@@ -338,7 +348,7 @@
         </div>
         <br>
         14. Keeping your options open is more important than having a to do list.<br>
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-14" autocomplete="off">
             </label>
@@ -362,8 +372,9 @@
             </label>
         </div>
         <br>
-        15. If your friend is sad about something, you are more likely to offer emotional support than suggest ways to deal with the problem.<br>
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        15. If your friend is sad about something, you are more likely to offer emotional support than suggest ways to
+        deal with the problem.<br>
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-15" autocomplete="off">
             </label>
@@ -388,7 +399,7 @@
         </div>
         <br>
         16. I rarely feel insecure.<br>
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-16" autocomplete="off">
             </label>
@@ -413,7 +424,7 @@
         </div>
         <br>
         17. I think that everyones views should be respected regardless of whether they are supported by facts or not.<br>
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-17" autocomplete="off">
             </label>
@@ -438,7 +449,7 @@
         </div>
         <br>
         18. I am open to new experiences and different ways of thinking.<br>
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-18" autocomplete="off">
             </label>
@@ -463,7 +474,7 @@
         </div>
         <br>
         19. I worry too much about what other people think.<br>
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-19" autocomplete="off">
             </label>
@@ -488,7 +499,7 @@
         </div>
         <br>
         20. I believe it is more rewarding to be liked by others than to be powerful.<br>
-        <div class="col-sm-12 col-sm-6 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
+        <div class="col-sm-3 options btn-group" data-toggle="buttons" role="group" aria-label="Options">
             <label class="btn btn-default option strongly agree sets-answer" data-value="-3">
                 <input type="radio" name="options-20" id="20-1" autocomplete="off">
             </label>
@@ -510,9 +521,87 @@
             <label class="btn btn-default option strongly disagree  sets-answer" data-value="3">
                 <input type="radio" name="options-20" id="20-7" autocomplete="off">
             </label>
+        </div><br>
+
+        <!-- <button type="button" class="btn btn-primary codeConduct-btn" data-toggle="modal" data-target="#codeconduct-modal">
+                Submit
+         </button> -->
+
+         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i>Code of Conduct</i></h5>
         </div>
-        <button type="submit">Sumbit</button>
-    </form>
-     
- </body>
- </html>
+        <div class="modal-body">
+            <div class="modal-quotes">"One of the most sincere forms of respect is actually listening
+                <p>
+                  to what another has to say"</p> – Bryant H. McGill
+              </div>
+  
+              <hr width="50%">
+              <p>Welcome to <b>Find Your (Mis)fit</b>, a chat platform created specifically to match you with someone you wouldn't
+                normally speak with.</p>
+  
+              <p>Before you proceed to the survey that will help us choose your match, you must agree to the Code of Conduct
+                featured below:<br></p>
+  
+              <hr width="10%">
+  
+              <h6><i>Code of Conduct</i></h6>
+  
+              <h5>
+                <p>- I am aware that I will be matched with someone who has different opinions from me.</p>
+  
+                <p>- I will treat all users with respect and will conduct myself in a respectful manner.</p>
+  
+                <p> - I understand that <b>Find Your (Mis)fit</b> will not accept or tolerate any discriminatory comments/actions
+                  against anyone because of race, religion, sexuality, or any other means.</p>
+              </h5>
+
+              <script>checkForm(form)
+                {
+                  if (!form.terms.checked) {
+                    alert("Please agree to the Code of Conduct.");
+                    form.terms.focus();
+                    return false;
+                  }
+                  return true;
+                }
+  
+              </script>
+  
+              <form onsubmit="return checkForm(this);">
+                <p><input onchange="this.setCustomValidity(validity.valueMissing ? 'Please accept the Code of Conduct to proceed to the survey.' : '');"
+                    id="field_terms" type="checkbox" required name="terms"> I accept the <u>Code of Conduct</u></p>
+                <p><input type="submit"></p>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Proceed To Survey</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+      
+               
+</form> 
+
+</body>
+
+</html>
