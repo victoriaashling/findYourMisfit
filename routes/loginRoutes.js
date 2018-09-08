@@ -44,8 +44,21 @@ module.exports = function(app) {
                     let newUser = req.body;
             
                     db.User.create({ handle: newUser.username, email: newUser.email, password: newUser.password }).then(user => {
-                        db.Profile.create({ firstName: newUser.firstName, lastName: newUser.lastName, UserId: user.dataValues.id }).then(profile => {
+                        let userID = parseInt(user.dataValues.id);
+                        let matchID;
+                        let nsp;
+                        if (userID % 2 === 0) { 
+                            matchID = userID - 1; 
+                            nsp = matchID + "m" + userID;
+                        }
+                        else { 
+                            matchID = userID + 1;
+                            nsp = userID + "m" + matchID; 
+                        }
+
+                        db.Profile.create({ firstName: newUser.firstName, lastName: newUser.lastName, chatMatch: matchID, namespace: nsp, UserId: user.dataValues.id }).then(profile => {
                             console.log("hello from inside");
+                            console.log(profile);
                             return cb(null, user);
                         });
                     });
