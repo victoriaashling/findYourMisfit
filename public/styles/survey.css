@@ -10,11 +10,6 @@ h1 {
 }
 
 html, body {padding:0;margin:0;}
-.wrap {
-font:20px Arial, san-serif;
-}
-
-html,body {padding:0;margin:0;}
 
 h1.likert-header {
   padding-left:4.25%;
@@ -27,16 +22,8 @@ h1.likert-header {
   margin:0;
   padding:0 0 35px;
   display:block;
-  border-bottom:2px solid #efefef;
+  border-bottom:2px solid #f5c39a;
 }
-
-form .likert {
-list-style:none;
-width:100%;
-margin:0;
-padding:0 0 35px;
-display:block;
-border-bottom:2px solid #f5c39a;
 
 .likert:last-of-type {
   border-bottom: 0;
