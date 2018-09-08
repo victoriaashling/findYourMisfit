@@ -11,3 +11,8 @@ h1 {
   text-align: center;
   color: #777777
 }
+
+.codeConduct-btn {
+  background-color: purple;
+  color: white;
+}
