@@ -72,3 +72,8 @@ form .buttons .clear {background-color: #e9e9e9;}
 form .buttons .submit {background-color: #67ab49;} 
 form .buttons .clear:hover {background-color: #ccc;}
 form .buttons .submit:hover {background-color: #0da72c;}
+
+.codeConduct-btn {
+  background-color: purple;
+  color: white;
+}
