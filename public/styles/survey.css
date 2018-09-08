@@ -81,3 +81,8 @@ h1.likert-header {
   background-color: purple;
   color: white;
 }
+
+#accept-btn {
+  color: white;
+  text-decoration: none;
+}
