@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
         namespace: {
             type: DataTypes.STRING
         },
-        UserId: {
+        userId: {
             type: DataTypes.INTEGER,
             allowNull: false
         }
