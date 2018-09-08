@@ -9,11 +9,11 @@ const path = require("path");
 const misfitsList = [1, 2, 3];
 
 
-  router.get("/api/misfits", function(req, res){
+  router.get("/misfits", function(req, res){
     res.json(misfitsList);
   });
 
-  router.post("/api/misfits", function(req, res){
+  router.post("/misfits", function(req, res){
     //do we want to ask for photos?
     var bestmisMatch = {
       "name": "none",
