@@ -56,7 +56,7 @@ module.exports = function(app) {
                             nsp = userID + "m" + matchID; 
                         }
 
-                        db.Profile.create({ firstName: newUser.firstName, lastName: newUser.lastName, chatMatch: matchID, namespace: nsp, UserId: user.dataValues.id }).then(profile => {
+                        db.Profile.create({ firstName: newUser.firstName, lastName: newUser.lastName, chatMatch: matchID, namespace: nsp, userId: userID }).then(profile => {
                             console.log("hello from inside");
                             console.log(profile);
                             return cb(null, user);
