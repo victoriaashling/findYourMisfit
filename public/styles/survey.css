@@ -6,7 +6,12 @@
 
 h1 {
   text-align: center;
-  color: #777777;
+  color: #ec7733be
+}
+
+html, body {padding:0;margin:0;}
+.wrap {
+font:20px Arial, san-serif;
 }
 
 html,body {padding:0;margin:0;}
@@ -24,6 +29,14 @@ h1.likert-header {
   display:block;
   border-bottom:2px solid #efefef;
 }
+
+form .likert {
+list-style:none;
+width:100%;
+margin:0;
+padding:0 0 35px;
+display:block;
+border-bottom:2px solid #f5c39a;
 
 .likert:last-of-type {
   border-bottom: 0;
