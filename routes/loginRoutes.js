@@ -1,10 +1,10 @@
 const passport = require("passport");
 const Strategy = require("passport-local").Strategy;
-const ensure = require('connect-ensure-login');
+// const ensure = require('connect-ensure-login');
 const db = require("../models");
 
 
-const path = require("path");
+// const path = require("path");
 const bodyParser = require("body-parser");
 
 module.exports = function(app) {
